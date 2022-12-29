@@ -1,0 +1,11 @@
+-- FOR GETTING ALL MOVIES
+SELECT * FROM movies
+
+-- FOR GETTING LONGEST RUNTIME MOVIES
+"SELECT tconst, primaryTitle, runtimeMinutes, titleType, genres FROM movies ORDER BY runtimeMinutes DESC LIMIT 10",
+
+-- FOR POSTING NEW MOVIE
+ "insert into movies values(?,?,?,?,?)",[tconst, titleType, primaryTitle, runtimeMinutes, genres]
+
+--  FOR GETTING TOP RATED MOVIES
+    "SELECT ratings.tconst, ratings.averageRating, movies.primaryTitle, movies.genres FROM ratings ,movies WHERE  ratings.averageRating > '6' ORDER BY averageRating DESC",
