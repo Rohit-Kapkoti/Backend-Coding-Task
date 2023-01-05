@@ -60,4 +60,19 @@ router.get("/top-rated-movies", (req, resp) => {
   );
 });
 
+router.get("/top", (req, resp) => {
+  db.query("SELECT DISTINCT genres, count(*) AS genres FROM movies GROUP BY genres",
+    (err, result) => {
+      if (err) {
+        resp.send(err);
+      } else {
+        resp.send(result);
+      }
+    }
+  );
+});
+
+"select genres from movies "
+
+
 module.exports = router;
